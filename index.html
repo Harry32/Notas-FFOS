@@ -14,19 +14,27 @@
     <!--<script type="text/javascript" src="js/jquery.mobile-1.4.3.min"></script>-->
 </head>
 
-<body>
-    <script>
-        window.onload = function () {
-            document.getElementById("resultado").style.display = "none";
+<body onload="reg();">
+    <script type="text/javascript">
+        var form = document.forms["myform"];
+        
+        window.onload = function () {}
 
+        function reg() {
+            window.captureEvents(Event.SUBMIT);
+            window.onsubmit = execBusca;
         }
+        
+        form.submit(function(){
+            document.getElementById("resultado").style.opacity = "100";
+        });
         function execBusca() {
-            document.getElementById("resultado").style.display = "block";
+            
         }
     </script>
     <section>
         <h2>Busque sua vizinha</h2>
-        <form id="busca" role="search" onsubmit="execBusca()">
+        <form id="busca" role="search">
             <button type="submit">Cancel</button>
             <p>
                 <input type="text" placeholder="Search..." required="">
