@@ -1,47 +1,53 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>Título do seu app</title>
     <!-- Our CSS -->
-    <link rel="stylesheet"  href="css/input_areas.css" type="text/css" />
-      <link rel="stylesheet"  href="css/lists.css" type="text/css" />
+    <link rel="stylesheet" href="css/util.css" type="text/css" />
+    <link rel="stylesheet" href="css/input_areas.css" type="text/css" />
+    <link rel="stylesheet" href="css/lists.css" type="text/css" />
     <!-- Our JS -->
-    <script src="js/jquery-2.1.1.min"></script>
-  </head>
-  <body>
-      <script>
-        $(document).ready(){
-            $("#resultado").hide();
+    <script type="text/javascript" src="js/jquery-2.1.1.min"></script>
+    <!--<script type="text/javascript" src="js/jquery.mobile-1.4.3.min"></script>-->
+</head>
+
+<body>
+    <script>
+        window.onload = function () {
+            document.getElementById("resultado").style.display = "none";
+
         }
-        $("#busca").submit(){
-            $("#resultado").show();
+        function execBusca() {
+            document.getElementById("resultado").style.display = "block";
         }
-      </script>
-      <section>
-          <h2>Busque sua vizinha</h2>
-          <form id="busca" role="search">
-              <button type="submit">Cancel</button>
-              <p>
+    </script>
+    <section>
+        <h2>Busque sua vizinha</h2>
+        <form id="busca" role="search" onsubmit="execBusca()">
+            <button type="submit">Cancel</button>
+            <p>
                 <input type="text" placeholder="Search..." required="">
                 <button type="reset">Clear</button>
-              </p>
-          </form>
-      </section>
-      <section id="resultado" data-type="list">
-          <header>Title</header>
-          <ul>
+            </p>
+        </form>
+    </section>
+    <section id="resultado" data-type="list">
+        <header>Resultado</header>
+        <ul>
             <li>
-              <aside class="pack-end">
-                <img alt="placeholder" src="images/pessoa.jpg">
-              </aside>
-              <a href="#">
-                <p>Travis Gray</p>
-                <p>Beginning of message</p>
-              </a>
+                <aside class="pack-end">
+                    <img alt="placeholder" src="images/pessoa.jpg">
+                </aside>
+                <a href="#">
+                    <p>Travis Gray</p>
+                    <p>Beginning of message</p>
+                </a>
             </li>
-          </ul>
-      </section>
-  </body>
-</html> 
+        </ul>
+    </section>
+</body>
+
+</html>
